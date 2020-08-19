@@ -3,19 +3,25 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   resolve: {
     alias: {
-      "react": "preact-compat",
-      "react-dom": "preact-compat"
+      "react": "preact/compat",
+      "react-dom": "preact/compat",
+      // Not necessary unless you consume a module using `createClass`
+      'create-react-class': 'preact/compat/lib/create-react-class',
+      // Not necessary unless you consume a module requiring `react-dom-factories`
+      'react-dom-factories': 'preact/compat/lib/react-dom-factories'
     }
   },
 
   externals: {
     // require("jquery") is external and available
     //  on the global var jQuery
-    "jquery": "jQuery"
+    "jquery": "jQuery",
+    "bootstrap": "bootstrap"
   },
 
   entry: {
@@ -43,7 +49,7 @@ module.exports = {
         loader: "babel-loader",
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: {cacheDirectory: true}
+        query: { cacheDirectory: true }
       },
 
       {
@@ -80,5 +86,12 @@ module.exports = {
         flatten: true
       }
     ]),
+
+    new TerserPlugin({
+      parallel: true,
+      terserOptions: {
+        ecma: 6,
+      },
+    }),
   ]
 };
