@@ -8,26 +8,20 @@
   <title>{{ $.Site.Title }}</title>
 
   {{ $stylesheet := .Site.Data.webpack.main }}
-  {{ with $stylesheet.css }}
+  {{ with $stylesheet.css -}}
     <link href="{{ relURL . }}" rel="stylesheet">
-  {{ end }}
+  {{- end }}
+
+  {{ block "head" . }}{{ end }}
 </head>
 
 <body>
   <div class="container-fluid">
     {{ block "header" . }}{{ partial "header" . }}{{end}}
     <div class="container">
-      {{ block "react" . }}{{ end }}
-      <hr />
       {{ block "main" . }}{{ end }}
 
       {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-
-      {{ $script := .Site.Data.webpack.main }}
-
-      {{ with $script.js }}
-        <script src="{{ relURL . }}"></script>
-      {{ end }}
     </div>
   </div>
 </body>

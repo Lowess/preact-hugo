@@ -5,6 +5,10 @@ node_image: &node_image
 hugo_env: &hugo_env
   BASE_URL: https://${DRONE_REPO_OWNER,,}.github.io/${DRONE_REPO_NAME}/
 
+when_prod: &when_prod
+  when:
+    branch: master
+
 kind: pipeline
 name: preact-template-pipeline
 steps:
@@ -56,8 +60,7 @@ steps:
       ssh_key:
         from_secret: github_ssh_key
       pages_directory: test-app/dist/
-    when:
-      branch: stable
+    <<: *when_prod
 
   - name: echo-urls
     image: lowess/drone-tabulate

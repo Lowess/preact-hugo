@@ -1,4 +1,8 @@
 <div id="demo">
+
+  {{- "<!-- Preact component injection -->" | safeHTML }}
+  {{ partial "preact.html" (dict "widget" .Site.Data.webpack.helloWidget "data" (dict "name" "from Preact HelloWidget")) }}
+
   <div class="jumbotron">
     <h1>Preact-Hugo with Webpack</h1>
     <div class="row">

@@ -25,11 +25,14 @@ module.exports = {
   },
 
   entry: {
-    main: path.join(__dirname, "src", "index.js"),
+    main: path.join(__dirname, "src/", "index.js"),
+    helloWidget: path.join(__dirname, "src/components/HelloWidget", "index.js"),
+    // External libs
     bootstrap: path.join(__dirname, "node_modules/bootstrap/js/dist", "index.js"),
   },
 
   output: {
+    libraryTarget: 'umd',
     path: path.join(__dirname, "dist")
   },
 

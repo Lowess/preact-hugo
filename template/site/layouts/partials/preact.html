@@ -1,0 +1,18 @@
+<div class="preact">
+  {{- "<!-- Preact component -->" | safeHTML }}
+  {{- $script := .widget }}
+  {{- $data := .data }}
+
+  {{ with $script.css -}}
+    <link href="{{ relURL . }}" rel="stylesheet">
+  {{- end }}
+
+  {{ with $script.js -}}
+    {{ with $data -}}
+      <script type="text/props">
+        {{ . | jsonify }}
+      </script>
+    {{- end }}
+    <script async src="{{ relURL . }}"></script>
+  {{- end }}
+</div>
