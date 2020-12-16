@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<!-- blog -->
+<section class="section mt-5">
+  <div class="articles container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto px-0">
+        <h2 class="mb-4">Posts related to <span class="text-primary">{{ .Title }}</span></h2>
+        <div class="bg-white shadow block">
+          {{- $paginator := .Paginate .Pages -}}
+
+          {{ range $paginator.Pages -}}
+            {{ .Render "article" }}
+          {{- end }}
+
+          {{- partial "pagination.html" . -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /blog -->
+
+{{ end }}

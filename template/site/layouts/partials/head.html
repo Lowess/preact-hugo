@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<title>{{ $.Site.Title }} - {{ .Title }}</title>
+
+{{ hugo.Generator }}
+
+{{ "<!-- Mobile responsive meta -->" | safeHTML }}
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=auto">
+
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+{{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+
+{{ "<!--  Meta dynamic block -->" | safeHTML }}
+{{- block "meta" . }}{{- end }}
+
+<base
+  href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
+
+{{ "<!--Favicon-->" | safeHTML }}
+<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+
+
+{{ "<!-- Plugins -->" | safeHTML }}
+{{ range .Site.Params.plugins.css }}
+<link rel="stylesheet"  type="text/css" href="{{ .link | absURL }}">
+{{ end }}
+
+{{ "<!-- Main Stylesheet -->" | safeHTML }}
+{{ $main := .Site.Data.webpack.main }}
+{{ with $main.css }}
+  <link rel="stylesheet" href="{{ relURL . }}" type="text/css" media="screen">
+{{ end }}
+
+{{ "<!-- Main Hugo Stylesheet -->" | safeHTML }}
+{{ with resources.Get "scss/main.scss" }}
+  {{ $css := . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}" type="text/css" media="screen">
+{{ end }}

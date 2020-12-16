@@ -1,9 +1,105 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "{{ name }} site"
+title = "{{ name }}"
 
-# RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableKinds = ["RSS"]
+
+########################### Navigation ###################################
+
+# main menu
+[[menu.main]]
+URL = "static/"
+name = "Static Content"
+weight = 2
+
+[[menu.main]]
+URL = "dynamic/"
+name = "Dynamic Content"
+weight = 3
+
+######################### Plugins ###########################
+
+# css plugins
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+######################### Default Parameters ###########################
+[params]
+# home
+home = "Home"
+# logo
+logo = "images/favicon.png"
+# meta data
+author = "Florian Dambrine"
+description = "Verity Flair - Diving into Verity with elegance"
+# google tag manager
+google_tag_manager = "" # your id
+# google analitycs ID
+google_analitycs_id = "" # your id
+# contact form action
+contact_form_action = "#" # contact form works with : https://formspree.io
+# copyright
+# copyright = "&copy; 2020 [GumGum Verity™](https://gumgum.com/verity) All Rights Reserved"
+
+# preloader
+[params.preloader]
+enable = true
+preloader = "" # use png, jpg, svg or gif format
+
+# search
+[params.search]
+enable = false
+
+
+[related]
+  includeNewer = false
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = "label"
+    weight = 100
+
+  [[related.indices]]
+    name = "category"
+    weight = 100
+
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+
+####################### banner #######################################
+[params.banner]
+bgImage = "images/banner/banner-bg.svg"
+title = "Welcome to Verity test page. <br> Want to know more about the tech ? [Visit our website](https://gumgum.com/verity-for-advertisers)"
+image = "images/banner/verity-banner.png"
+
+
+######################## call to action ###############################
+[params.cta]
+enable = true
+image = "images/vision.png"
+title = "Get the best out of contextual intelligence"
+description = "Verity™, the artificial intelligence at the heart of our platform, delivers the industry’s most sophisticated contextual targeting without sacrificing brand safety or campaign reach."
+[params.cta.button]
+enable = true
+label = "Jump into contextual intelligence"
+link = "https://gumgum.com/verity/"
+
+
+############################## Social Site ##########################
+[[params.social]]
+icon = "ti-facebook" # themify icon pack https://themify.me/themify-icons
+link = "https://www.facebook.com/gumguminc/"
+[[params.social]]
+icon = "ti-twitter-alt" # themify icon pack https://themify.me/themify-icons
+link = "https://twitter.com/GumGum"
+[[params.social]]
+icon = "ti-linkedin" # themify icon pack https://themify.me/themify-icons
+link = "https://www.linkedin.com/company/gumgum"
+
+[markup.goldmark.renderer]
+unsafe=true

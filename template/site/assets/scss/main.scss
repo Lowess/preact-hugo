@@ -1,0 +1,54 @@
+/********************************
+  Third Party installed with npm
+*********************************/
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+/********************************
+  Site imports to load partials
+*********************************/
+
+@import 'imports/reset';
+
+@import 'imports/variables';
+@import 'imports/animations';
+@import 'imports/demo';
+
+/********************************
+  Or directly add your CSS
+*********************************/
+
+body {
+  font-size: calc(10px + 1vmin);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  color: #282c34;
+}
+
+a {
+  color: #613CB1;
+  text-decoration: none;
+}
+
+.content {
+  padding: 0 32px;
+}
+
+.articles {
+  margin-top: 350px;
+}
+
+.navigation {
+  background-color: white;
+  border-bottom: 2px solid $primary-color;
+}

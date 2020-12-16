@@ -1,6 +1,5 @@
 import { h, Component } from "preact";
 import habitat from "preact-habitat";
-import './style.scss';
 
 class HelloWidget extends Component {
   constructor(props) {
@@ -25,8 +24,7 @@ class HelloWidget extends Component {
   }
 
   render({ name }, { time }) {
-    let style = "widget";
-    return <div class={`jumbotron ${style}`}>
+    return <div class="container jumbotron">
       <h1>
         {`Hello ${name}`}
         <small>{` - time is: ${time}`}</small>
