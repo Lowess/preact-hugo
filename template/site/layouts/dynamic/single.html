@@ -1,0 +1,4 @@
+{{ define "main" }}
+  {{- "<!-- Preact component injection -->" | safeHTML }}
+  {{ partial "preact.html" (dict "widget" .Site.Data.webpack.helloWidget "data" (dict "name" "I am built with Preact")) }}
+{{ end }}

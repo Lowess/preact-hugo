@@ -1,9 +1,5 @@
-<div id="demo">
-
-  {{- "<!-- Preact component injection -->" | safeHTML }}
-  {{ partial "preact.html" (dict "widget" .Site.Data.webpack.helloWidget "data" (dict "name" "from Preact HelloWidget")) }}
-
-  <div class="jumbotron">
+<div id="demo" class="container">
+  <div class="shadow p-3">
     <h1>Preact-Hugo with Webpack</h1>
     <div class="row">
       <div class="col-md">
@@ -26,3 +22,6 @@
     <h3>Hooray 🎉 - you've built this with <a href="https://github.com/Lowess/preact-hugo">Preact-Hugo</a>!</h3>
   </div>
 </div>
+
+{{- "<!-- Preact Login component injection -->" | safeHTML }}
+{{ partial "preact.html" (dict "widget" .Site.Data.webpack.loginWidget "data" (dict)) }}

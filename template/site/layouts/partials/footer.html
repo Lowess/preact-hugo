@@ -1,0 +1,28 @@
+{{ $main := .Site.Data.webpack.main }}
+
+<footer id="footer" class="text-center">
+  <p>
+    <small>
+      <span class="copyright">
+        &copy; {{ now.Format "2006"}} <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+      </span>
+      <span>made by the <a href="https://gumgum.com/careers">Verity team</a></span>
+    </small>
+  </p>
+
+  {{ "<!-- JS Plugins -->" | safeHTML }}
+  {{ range .Site.Params.plugins.js}}
+  <script src="{{ .link | absURL }}"></script>
+  {{ end }}
+
+  {{ "<!-- Hugo Script -->" | safeHTML }}
+  {{ with resources.Get "js/script.js" }}
+    {{ $script := . | minify }}
+    <script src="{{ $script.Permalink }}"></script>
+  {{ end }}
+
+  {{ "<!-- Preact Script -->" | safeHTML }}
+  {{ with $main.js }}
+    <script src="{{ relURL . }}"></script>
+  {{ end }}
+</footer>
