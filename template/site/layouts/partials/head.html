@@ -21,12 +21,12 @@
 <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
 
 
-{{ "<!-- Plugins -->" | safeHTML }}
+{{ "<!-- Hugo Plugins -->" | safeHTML }}
 {{ range .Site.Params.plugins.css }}
 <link rel="stylesheet"  type="text/css" href="{{ .link | absURL }}">
 {{ end }}
 
-{{ "<!-- Main Stylesheet -->" | safeHTML }}
+{{ "<!-- Main JS Stylesheet -->" | safeHTML }}
 {{ $main := .Site.Data.webpack.main }}
 {{ with $main.css }}
   <link rel="stylesheet" href="{{ relURL . }}" type="text/css" media="screen">

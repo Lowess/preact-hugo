@@ -1,15 +1,13 @@
 +++
-title = "Welcome from Preact-Hugo"
-date = "2020-12-16T02:24:00"
-author = "Albert Camus"
+title = "How-To"
+date = "2020-12-13T02:24:00"
+author = "Victor Hugo"
 image = "images/favicon.png"
-categories = ["welcome"]
+categories = ["tutorial"]
 tags = ["static"]
 +++
 
-# Welcome !
-
-Welcome to this new world of possibilities with [Hugo](https://gohugo.io/) and [Preact](https://preactjs.com/)
+# How to
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus ut tortor ac convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent eleifend tempus commodo. In pellentesque, tortor et viverra pulvinar, sem dui volutpat diam, eget luctus sapien sem sed libero. Donec vel lorem nec neque eleifend rutrum. Morbi non nulla nisi. Cras ultricies facilisis justo, nec aliquet ligula blandit sed. Aenean varius mattis mauris, et fermentum nisi ullamcorper a. Aenean at augue vestibulum, varius mauris ut, sodales tortor. Cras eleifend lacus et quam auctor, ac ornare velit tempor. Sed dignissim, enim vel fermentum suscipit, leo nisi vulputate leo, quis luctus orci magna eu metus. Ut porta est ac mollis mollis. Proin varius in felis in feugiat. Nullam lobortis justo eu sapien mattis commodo. Morbi urna nisi, porttitor a arcu ut, aliquet congue leo. Praesent id aliquam odio, gravida efficitur justo.
 

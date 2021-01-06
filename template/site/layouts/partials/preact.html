@@ -3,6 +3,15 @@
   {{- $script := .widget }}
   {{- $data := .data }}
 
+  <div class="loader">
+    <div>Loading Preact Widget</div>
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   {{ with $script.css -}}
     <link href="{{ relURL . }}" rel="stylesheet">
   {{- end }}
