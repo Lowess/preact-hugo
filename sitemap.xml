@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lowess.github.io/preact-hugo/author/albert-camus/</loc>
+    <lastmod>2020-12-16T02:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lowess.github.io/preact-hugo/author/</loc>
+    <lastmod>2020-12-16T02:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lowess.github.io/preact-hugo/categories/</loc>
     <lastmod>2020-12-16T02:24:00+00:00</lastmod>
   </url>
@@ -38,8 +48,23 @@
   </url>
   
   <url>
+    <loc>https://lowess.github.io/preact-hugo/author/victor-hugo/</loc>
+    <lastmod>2020-12-16T02:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lowess.github.io/preact-hugo/categories/welcome/</loc>
+    <lastmod>2020-12-16T02:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lowess.github.io/preact-hugo/static/welcome/</loc>
     <lastmod>2020-12-16T02:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lowess.github.io/preact-hugo/static/how-to/</loc>
+    <lastmod>2020-12-13T02:24:00+00:00</lastmod>
   </url>
   
   <url>
