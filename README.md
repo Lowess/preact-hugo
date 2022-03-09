@@ -1,3 +1,7 @@
+> ⚠️ **This repository has been archived and is not maintained anymore** ⚠️
+> ☝️ A more friendly Hugo native theme based on Hugo Pipes is now replacing this repository:
+> 🔗 Please see [Hugo Preact Theme](https://github.com/Lowess/hugo-preact-theme)
+
 # Preact-Hugo
 
 **A Preact-Hugo boilerplate for creating truly epic websites**
